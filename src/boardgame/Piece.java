@@ -1,7 +1,8 @@
 package boardgame;
 
 public class Piece {
-
+	
+	//define o que é a peça, sem associá-la ao xadrez
 	protected Position position;
 	private Board board;
 	
