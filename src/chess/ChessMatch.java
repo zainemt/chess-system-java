@@ -19,7 +19,7 @@ public class ChessMatch {
 		ChessPiece[][] mat = new ChessPiece[board.getRowsNumber()][board.getColumnNumber()];
 		for (int i = 0; i < board.getRowsNumber(); i++) {
 			for (int j = 0 ; j < board.getColumnNumber(); j++) {
-				mat[i][j] = (ChessPiece) board.piece(i, j);
+				mat[i][j] = (ChessPiece) board.piecePosition(i, j);
 			}
 		}
 		return mat;

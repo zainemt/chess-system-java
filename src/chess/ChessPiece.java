@@ -3,7 +3,7 @@ package chess;
 import boardgame.Board;
 import boardgame.Piece;
 
-public class ChessPiece extends Piece{
+public class ChessPiece extends Piece {
 	//define a peça quanto peça de xadrez
 	private Color color;
 	
