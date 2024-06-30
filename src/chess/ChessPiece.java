@@ -3,7 +3,8 @@ package chess;
 import boardgame.Board;
 import boardgame.Piece;
 
-public class ChessPiece extends Piece {
+//por ainda ser uma classe genérica, mantém-se como abstrata, não necessitando de conter os métodos abstratos da classe piece, reservando-os para as classes que ditem o movimento das peças
+public abstract class ChessPiece extends Piece {
 	//define a peça quanto peça de xadrez
 	private Color color;
 	
