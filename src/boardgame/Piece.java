@@ -3,7 +3,7 @@ package boardgame;
 public abstract class Piece {
 	
 	//define o que é a peça, sem associá-la ao xadrez
-	protected Position position; //acessado pelo mesmo pacote e por subclasses
+	protected Position position;
 	private Board board;
 	
 	public Piece(Board board) {
@@ -23,7 +23,8 @@ public abstract class Piece {
 		return possibleMoves()[position.getRow()][position.getColumn()];
 	}
 	
-	public boolean isThereAnyPosibleMove() {
+	public boolean isThereAnyPossibleMove() {
+		
 		boolean[][] mat = possibleMoves();
 		
 		for (int i = 0 ; i < mat.length ; i++) {

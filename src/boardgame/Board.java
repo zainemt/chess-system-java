@@ -27,13 +27,13 @@ public class Board {
 	
 	//sobrecarga de método, dois métodos iguais, que mudam seu "acionamento" a partir do parâmetro que é passado
 	//retorno da peça da posição do parâmetro
-		public Piece piecePosition(int row, int column) {
+		public Piece piece(int row, int column) {
 			if (!positionExists(row, column)) {
 				throw new BoardException("This position doesn't exists");
 			}
 			return pieces[row][column];
 		}
-		public Piece piecePosition(Position position) {
+		public Piece piece(Position position) {
 			if (!positionExists(position.getRow(), position.getColumn())) {
 				throw new BoardException("This position doesn't exists");
 			}
@@ -54,10 +54,10 @@ public class Board {
 		if (!positionExists(position)) {
 			throw new BoardException("This position doesn't exists");
 		}
-		if (piecePosition(position) == null) {
+		if (piece(position) == null) {
 			return null;
 		}
-		Piece aux = piecePosition(position);
+		Piece aux = piece(position);
 		//retirada da peça a partir do nulo na devida posição
 		aux.position = null;
 		pieces[position.getRow()][position.getColumn()] = null;
@@ -79,7 +79,7 @@ public class Board {
 			throw new BoardException("This position doesn't exists");
 		}
 		//utilização do método de retonro da peça na posição
-		return piecePosition(position) != null;
+		return piece(position) != null;
 	}
 	
 	
