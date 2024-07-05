@@ -102,7 +102,9 @@ public class ChessMatch {
 	private Piece makeMove(Position source, Position target) {
 		//método destinado para a realização de um movimento no jogo
 			//remove peça que deseja mover do seu local de origem e agrega a uma variável auxiliar
-			Piece p = board.removePiece(source);
+			ChessPiece p = (ChessPiece)board.removePiece(source);
+			//quantiade de movimentos da peça
+			p.increaseMoveCount();
 			//remove a peça no local de destino, para que naquele local, seja inserida a peça que movimentou, guardando a peça, ou se vazio, nulo, em uma variável auxiliar
 			Piece capturedPiece = board.removePiece(target);
 			//adicionar a peça capturada a lista de peças fora do jogo
@@ -119,7 +121,9 @@ public class ChessMatch {
 	private void undoMove(Position source, Position target, Piece capturedPiece) {
 	//método para desfazer o movimento realizado
 		//remover a peça movida do destino ao qual ela foi movimentada.
-		Piece p = board.removePiece(target);
+		ChessPiece p = (ChessPiece)board.removePiece(target);
+		//quantidade de movimentos da peça
+		p.decreaseMoveCount();
 		//retornar a peça movida a sua posição de origem
 		board.placePiece(p, source);
 		
